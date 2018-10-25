@@ -1,5 +1,5 @@
 const request = require('request');
-const mapsKey = 'AIzaSyAnSvVYhOreelLc7w7TNtLj3JDPNahy2S0';
+const mapsKey = {google api key};
 
 var geocodeAddress = (address) => {
   return new Promise((resolve, reject) =>{
