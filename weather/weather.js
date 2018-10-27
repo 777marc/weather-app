@@ -1,5 +1,6 @@
 const request = require('request');
-const APIKey = '{ darksky api key }';
+const { darkeyApiKey } = require('../keys/keys');
+const APIKey = darkeyApiKey;
 
 const getWeather = (lat, lon, callback) => {
 

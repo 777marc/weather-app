@@ -1,5 +1,6 @@
 const request = require('request');
-const mapsKey = '{ google maps api key }';
+const { googleMapsApiKey } = require('../keys/keys');
+const mapsKey = googleMapsApiKey;
 
 const geocode = (address, callback) => {
   

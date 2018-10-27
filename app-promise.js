@@ -1,5 +1,6 @@
 const yargs = require('yargs');
 const axios = require('axios');
+const { googleMapsApiKey, darkeyApiKey } = require('./keys/keys');
 
 const argv = yargs
   .options({
@@ -14,10 +15,12 @@ const argv = yargs
   .alias('help','h')
   .argv;
 
-  var mapsKey = 'AIzaSyCzMB6H8B4SOxDDpGXmLOV90xI36M_7IxY';
-  var weatherKey = 'a1750f7e4397330f7781b029421eb254';
+  var mapsKey = googleMapsApiKey;
+  var weatherKey = darkeyApiKey;
   var encodedAddress = encodeURIComponent(argv.address);
   var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?key=${mapsKey}&address=${encodedAddress}`
+
+  console.log(googleMapsApiKey);
 
   axios.get(geocodeUrl).then((response) => {
     if(response.data.status === 'ZERO_RESULTS') {
